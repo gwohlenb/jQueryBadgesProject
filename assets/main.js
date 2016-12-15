@@ -12,22 +12,17 @@ $(document).ready(function() {
 
     coursesCompleted.forEach(function(course) {
 
-      $("#badges");
-
-      var course = $('<div />', { 'class': 'course' })
+      var courseList = $('<div />', { 'class': 'course' })
         .appendTo($('#badges'));
 
-      $('<h3 />', { text: course:title })
-        .appendTo($('#badges'));
+      $('<h3 />', { text: course.title })
+        .appendTo(courseList);
 
-      $('<img />', { src: course:badge })
-        .appendTo($('#badges'));
+      $('<img />', { src: course.badge })
+        .appendTo(courseList);
 
-      $("<a />, { 'class': 'btn btn-primary', target: '_blank', href: 'text:url', text: 'See Course' })
-        .appendTo($('#badges'));
-
-       console.log("Add the courses");
-       return course;
-     }
+      $('<a />', { 'class': 'btn btn-primary', target: '_blank', href: course.url, text: 'See Course' })
+        .appendTo(courseList);
+     })
    }
 });
